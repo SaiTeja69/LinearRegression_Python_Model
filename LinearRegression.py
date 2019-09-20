@@ -1,3 +1,4 @@
+from Graph import plotting
 features=[int(x) for x in input("Enter features").split()]
 labels=[int(x) for x in input("Enter labels").split()]
 def find_weight(labels,features):
@@ -27,3 +28,4 @@ slope=find_slope(weight,labels,features)
 print("y=",weight,"*x",slope[1])
 error=find_best_model(labels,features,weight,slope)
 print("mean square error is ",sum(error)/len(error))
+plotting(weight,slope[0])
