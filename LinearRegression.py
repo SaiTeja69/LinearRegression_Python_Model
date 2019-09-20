@@ -16,7 +16,14 @@ def find_slope(weight,labels,features):
         slope.append(z)
     return slope
 def find_best_model(labels,features,weight,slope):
-    pass
+    error=[]
+    for i in range(len(labels)):
+        err=0
+        for x in range(len(labels)):
+            err=err+(labels[x]-weight*features[x])**2
+        error.append(err)
 weight=find_weight(labels,features)
 slope=find_slope(weight,labels,features)
 print("y=",weight,"*x",slope[1])
+error=find_best_model(labels,features,weight,slope)
+print("mean square error is ",sum(error)/len(error))
